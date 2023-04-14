@@ -7,7 +7,7 @@ RSpec.describe Race do
 
   end
 
-  describe '#initialilze' do
+  describe '#initialize' do
     it 'exists' do
       expect(@race).to be_a(Race)
     end
