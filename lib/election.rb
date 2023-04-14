@@ -14,6 +14,7 @@ class Election
 
 
   def candidates
-    @election.races.flat_map(&:candidates).uniq
+    races.flat_map(&:candidates).uniq { |candidate| [candidate.name, candidate.party] }
   end
+  
 end

@@ -29,21 +29,21 @@ RSpec.describe Election do
 
   describe '#candidates' do
     it 'returns added Candidates into an array' do
-      race1 = Race.new("Colorado Governer")
-      race2 = Race.new("California Governer")
+      race1 = Race.new("Colorado Governor")
+      race2 = Race.new("California Governor")
 
       candidate1 = Candidate.new(name: 'Aaron Weld', party: :independent)
       candidate2 = Candidate.new(name: 'Erin Jones', party: :democrat)
 
-      race1.register_candidate!(name: candidate1.name, party: candidate1.party)
-      race2.register_candidate!(name: candidate2.name, party: candidate2.party)
-
       @election.add_race(race1)
       @election.add_race(race2)
 
-      expect(@election.candidates).to eq([candidate1, candidate2])
+      race1.register_candidate!(name: 'Aaron Weld', party: :independent)
+      race2.register_candidate!(name: 'Erin Jones', party: :democrat)
 
-
+      expect(@election.candidates.map { |candidate| [candidate.name, candidate.party] }).to eq([[candidate1.name, candidate1.party], [candidate2.name, candidate2.party]])
     end
+
+    
   end
 end
