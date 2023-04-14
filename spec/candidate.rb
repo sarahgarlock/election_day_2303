@@ -1,13 +1,13 @@
 require './lib/candidate'
 
-RSpec.describe Canidate do
+RSpec.describe Candidate do
   before(:each) do
-    @diana = Canidate.new({name: "Diana D", party: :democrat})
+    @diana = Candidate.new({name: "Diana D", party: :democrat})
   end
 
   describe '#initialize' do
     it 'exists' do
-      expect(@diana).to be_a(Canidate)
+      expect(@diana).to be_a(Candidate)
     end
 
     it 'has attributes' do

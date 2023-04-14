@@ -1,4 +1,4 @@
-class Canidate
+class Candidate
   attr_reader :name,
               :party,
               :votes
@@ -13,3 +13,4 @@ class Canidate
     @votes += 1
   end
 end
+
